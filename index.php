@@ -4,7 +4,7 @@ require_once __DIR__ . '/config/db.php';
 
 // Redirect if already logged in
 if (isset($_SESSION['user_id'])) {
-    header("Location: view/students/dashboard.php");
+    header("Location: /student-management/view/students/dashboard.php");
     exit;
 }
 
@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Student Management System - Login</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/student-management/assets/css/style.css">
 </head>
 <body>
     <h2>Login</h2>
-    <form method="POST" action="">
+    <form method="POST" action="/student-management/index.php">
         <label>Email:</label><br>
         <input type="email" name="email" required><br><br>
         <label>Password:</label><br>
