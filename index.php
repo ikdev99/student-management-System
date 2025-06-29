@@ -11,14 +11,15 @@ if (isset($_SESSION['user_id'])) {
 // Handle login submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once __DIR__ . '/controller/AuthController.php';
-    $auth = new AuthController();
+    $auth = new AuthController($pdo);
     $auth->login($_POST['email'], $_POST['password']);
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Student Management System - Login</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
